@@ -1,19 +1,21 @@
 class BinaryNode:
-    def __init__(self, value):
+    '''A class to represent a binary node.
+    '''
+    def __init__(self, value, left=None, right=None) -> None:
         self.value = value
-        self.left_child = None
-        self.right_child = None
+        self.left_child = left
+        self.right_child = right
 
-    def add_left(self, node):
+    def add_left(self, node) -> None:
         self.left_child = node
 
-    def add_right(self, node):
+    def add_right(self, node) -> None:
         self.right_child = node
 
-    def __str__(self):
+    def __str__(self) -> str:
         left_value = self.left_child.value if self.left_child is not None else "None"
         right_value = self.right_child.value if self.right_child is not None else "None"
-        return "{}: {} {}".format(self.value, left_value, right_value)
+        return f"{self.value}: {left_value} {right_value}"
 
 
 def main():

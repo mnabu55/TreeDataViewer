@@ -1,13 +1,18 @@
+from typing import List
+
+
 class NaryNode:
-    def __init__(self, value):
+    '''A class to represent a nary node.
+    '''
+    def __init__(self, value) -> None:
         self.value = value
         self.children = []
 
-    def add_child(self, node):
+    def add_child(self, node) -> None:
         self.children.append(node)
 
-    def __str__(self):
-        return "{}: ".format(self.value) + " ".join([str(x.value) for x in self.children])
+    def __str__(self) -> str:
+        return f"{self.value}: " + " ".join([str(x.value) for x in self.children])
 
 
 def main():
